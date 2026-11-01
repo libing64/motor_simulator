@@ -7,5 +7,8 @@ __pycache__/
 sim/native/*.so
 sim/native/*.dylib
 
+# 教程生成的图（python3 tutorial/run_all.py 重新生成）
+tutorial/out/
+
 # 本地产物/日志
 /.workbuddy/
