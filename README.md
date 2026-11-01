@@ -38,13 +38,25 @@ motor_simulator/
 
 ## 快速开始
 
+依赖只有 `numpy` + `matplotlib`（见 `requirements.txt`）。推荐用 conda 环境 `motors`：
+
 ```bash
-pip install numpy matplotlib
+conda activate motors       # 已建好：Python 3.12 + numpy 2.5 + matplotlib 3.11
 
 python3 run_foc_test.py     # 编译 + 22 项测试 + foc_test_report.png + 报告
 python3 tests/run_tests.py  # 只跑测试
 python3 motor_sim.py        # 原开环仿真
 ```
+
+环境不存在时重建：
+
+```bash
+conda create -y -n motors python=3.12 numpy matplotlib
+# 或用 pip：python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+```
+
+> 用裸 `python3` 跑报 `ModuleNotFoundError: No module named 'numpy'`，就是没进环境——
+> 先 `conda activate motors`（或显式用 `~/.conda/envs/motors/bin/python run_foc_test.py`）。
 
 输出物：`foc_test_report.png`（9 宫格结果图）、`foc_test_compare.png`（指标柱状图）、
 `foc_test_summary.md`（PASS/FAIL 明细表）。
