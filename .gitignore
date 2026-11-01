@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# 编译产物（用 python3 -m sim.build 重新生成）
+sim/native/*.so
+sim/native/*.dylib
+
+# 本地产物/日志
+/.workbuddy/
